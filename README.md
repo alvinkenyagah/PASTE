@@ -24,3 +24,11 @@ menuentry "Bliss OS (EFI)" {
 }
 
 
+menuentry "Bliss OS (EFI)" {
+    insmod part_gpt
+    insmod fat
+    search --no-floppy --fs-uuid --set=root 1234-ABCD
+    chainloader /EFI/BlissOS/BOOTX64.EFI
+}
+
+
